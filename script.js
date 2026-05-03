@@ -1,8 +1,8 @@
 const cars = [
-  { name: "Tesla Model S", price: "₹90L", img: "images\\audi.jpg" },
-  { name: "BMW M4", price: "₹1.2Cr", img: "images\\bmw.jpg" },
-  { name: "Audi R8", price: "₹2Cr", img: "images\\audi.jpg" },
-  { name: "Mustang GT", price: "₹80L", img: "images\\mustang.jpg" }
+  { name: "Tesla Model S", price: "₹90L", img: "images/tesla.jpeg" },
+  { name: "BMW M4", price: "₹1.2Cr", img: "images/bmw.jpeg" },
+  { name: "Audi R8", price: "₹2Cr", img: "images/audi.jpeg" },
+  { name: "Mustang GT", price: "₹80L", img: "images/mustang.jpeg" }
 ];
 
 const container = document.getElementById("cars");
@@ -12,10 +12,12 @@ cars.forEach((car, i) => {
   card.className = "card";
 
   card.innerHTML = `
-    <img src="${car.img}" alt="${car.name}">
-    <h3>${car.name}</h3>
-    <p>${car.price}</p>
-    <button onclick="buyCar('${car.name}')">Buy Now</button>
+    <img src="${car.img}">
+    <div class="card-content">
+      <h3>${car.name}</h3>
+      <p>${car.price}</p>
+      <button onclick="buyCar('${car.name}')">Buy Now</button>
+    </div>
   `;
 
   container.appendChild(card);
@@ -26,7 +28,7 @@ cars.forEach((car, i) => {
 });
 
 function buyCar(name) {
-  alert("You selected " + name);
+  alert("Selected: " + name);
 }
 
 function scrollToCars() {
